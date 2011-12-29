@@ -90,9 +90,13 @@ h4 {
 /* Links */
 
 a {
-	color: #0033CC;
-	border-bottom: 1px solid #89ACCC;
 	text-decoration: none;
+	border-bottom: 1px solid #89ACCC;
+}
+
+a:link {
+	color: #0033CC;
+	border-color: 1px solid #89ACCC;
 }
 
 a:visited {
