@@ -1,0 +1,467 @@
+/*
+
+	Stylesheet for PROJECT
+
+	Media:      screen, projection
+	Copyright:  Netlash <http://www.netlash.com>
+	author:     author <author@netlash.com>
+
+*/
+
+/*
+	Reset
+*/
+
+article, aside, dialog, figure, footer, header, hgroup, nav, section { display: block; }
+body, form, ol, ul, dl, li, dt, dd, td, th ,tr, h1, h2, h3, h4, h5, h6, p, pre, blockquote, address { margin: 0; padding: 0; }
+ol, ul { list-style: none; }
+img { border:0; }
+fieldset { margin: 0; padding: 0; border: 0; }
+input, select, textarea { font-size: 100%; vertical-align: middle; }
+table { border-collapse: collapse; border-spacing: 0; empty-cells: show; }
+th { text-align: left; }
+a:focus { overflow: hidden; }
+
+/*
+	Clearfix
+*/
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.ie6 .clearfix,
+.ie7 .clearfix {
+	zoom: 1;
+}
+
+/*
+	General
+*/
+
+body {
+	font-family:"Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.5;
+	color: #000;
+	background: #FFF;
+}
+
+/*
+	Typography and text styles
+*/
+
+/* General */
+
+p {
+	padding: 0 0 12px 0;
+}
+
+strong, th, thead td, h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+}
+
+/* Headings */
+
+h1 {
+	font-size: 22px;
+	padding: 0 0 12px 0;
+}
+
+h2 {
+	font-size: 17px;
+	padding: 0 0 12px 0;
+}
+
+h3 {
+	font-size: 14px;
+	padding: 0 0 12px 0;
+}
+
+h4 {
+	font-size: 12px;
+	padding: 0 0 12px 0;
+}
+
+/* Links */
+
+a {
+	border-bottom: 1px solid #666;
+	text-decoration: none;
+}
+
+a:link {
+	color: #0033CC;
+	border-color: #899ACC;
+}
+
+a:visited {
+	color: #3300CC;
+	border-color: #9A89CC;
+}
+
+a:hover {
+	color: #0033CC;
+	border-color: #0033CC;
+}
+
+a:active {
+	color: #0033CC;
+	border-color: #0033CC;
+}
+
+a:focus {
+	color: #0033CC;
+	border-color: #0033CC;
+}
+
+/* .content defaults */
+
+.content ul {
+	list-style: disc;
+	padding: 0 0 12px 12px;
+}
+
+.content ol {
+	list-style-type: decimal;
+	padding: 0 0 12px 12px;
+}
+
+.content dl {
+	padding: 0 0 12px 12px;
+}
+
+.content ul ul,
+.content ul ol,
+.content ol ul,
+.content ol ol {
+	padding-bottom: 0;
+}
+
+.content code {
+	font-family: Monaco, "Courier New", monospace;
+}
+
+.content pre {
+	font-size: 12px;
+	line-height: 18px;
+	background: #F5F5F5;
+	margin: 0 0 12px 0;
+	padding: 10px;
+}
+
+.content blockquote,
+.content q {
+	font-style: italic;
+	color: #666;
+}
+
+.content blockquote {
+	padding: 0 10px;
+	padding: 12px 0;
+}
+
+.content cite,
+.content em {
+	font-style: italic;
+}
+
+.content table {
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+}
+
+.content td,
+.content th {
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	font-size: 11px;
+	padding: 4px;
+}
+
+.content th {
+	font-weight: 700;
+}
+
+/*
+	Page structure and layout
+*/
+
+#container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+/*
+	Header
+*/
+
+	/* Logo */
+
+	#logo h1,
+	#logo p {
+		width: 0px;
+		height: 0px;
+		background: url(../images/logo.png) no-repeat;
+		text-indent: -9999px;
+		float: left;
+		padding: 0;
+	}
+
+		#logo h1 a,
+		#logo p a {
+			width: 100%;
+			height: 100%;
+			display: block;
+			overflow: hidden;
+			border: none;
+		}
+
+	/* Navigation */
+
+
+/*
+	Content
+*/
+
+
+/*
+	Footer
+*/
+
+
+/*
+	Pagination
+*/
+
+.pagination {
+	width: 100%;
+	overflow: hidden;
+	border: 0;
+	padding-top: 20px;
+}
+
+.ie6 .pagination {
+	width: auto;
+}
+
+	.pagination header {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+		text-indent: -9999px;
+	}
+
+	.pagination .bd {
+		float: left;
+		position: relative;
+		left: 50%;
+	}
+
+	.ie6 .pagination .bd {
+		position: static;
+	}
+
+		.pagination ul {
+			padding: 0 0 12px 0;
+			overflow: hidden;
+			position: relative;
+			left: -50%;
+		}
+
+		.ie6 .pagination ul {
+			position: static;
+		}
+
+			.pagination li {
+				float: left;
+				margin: 0 4px 0 0;
+				line-height: 15px;
+				font-size: 12px;
+				font-size: 11px;
+				line-height: 1.636;
+				text-align: center;
+			}
+
+			.pagination li.previousPage span,
+			.pagination li.nextPage span {
+				float: left;
+				padding: 5px 8px;
+				min-width: 12px;
+				border: 1px solid #d8d8d8;
+				background: #ebebeb;
+				color: #666;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				border-radius: 5px;
+			}
+
+				.pagination li.currentPage span {
+					float: left;
+					padding: 5px 8px;
+					min-width: 12px;
+					border: 1px solid #d8d8d8;
+					background: #ebebeb;
+					font-weight: 700;
+					-moz-border-radius: 3px;
+					-webkit-border-radius: 3px;
+					border-radius: 3px;
+				}
+
+				.pagination li.ellipsis span {
+					float: left;
+					padding: 6px 4px 4px 4px;
+					min-width: 12px;
+					color: #666;
+				}
+
+				.pagination li a:active {
+					position: relative;
+					top: 1px;
+				}
+
+				.pagination li a {
+					float: left;
+					padding: 5px 8px;
+					min-width: 12px;
+					border: 1px solid #d8d8d8;
+					background: #fff;
+					-moz-border-radius: 5px;
+					-webkit-border-radius: 5px;
+					border-radius: 5px;
+					-moz-background-clip: padding;
+					-webkit-background-clip: padding-box;
+					background-clip: padding-box;
+				}
+
+/*
+	Form styles
+*/
+
+input, textarea, select, button {
+	font-family: Arial, sans-serif;
+}
+
+/*
+	General classes
+*/
+
+.hidden { display: none; }
+.block { display: block; }
+.noPadding { padding: 0 !important; }
+.noMargin { margin: 0 !important; }
+.floatLeft { float: left; }
+.floatRight { float: right; }
+.noBorder { border: none; }
+#skip, .accessibility { position: absolute; top: -9999px; left: -9999px; } /* For screenreaders */
+
+/*
+	Image classes
+*/
+
+img.alignLeft {
+	float: left;
+	padding: 0 10px 10px 0;
+}
+
+img.alignRight {
+	float: right;
+	padding: 0 0 10px 10px;
+}
+
+.linkedImage {
+	display: block;
+	border: none !important;
+}
+
+	.linkedImage img {
+		display: block;
+	}
+
+/*
+	Print styles
+*/
+
+@media print {
+	* {
+		color: #000 !important;
+		float: none;
+		text-shadow: none;
+	}
+
+	div {
+		background-color: white !important;
+	}
+
+	/* place the divs and elements you want to hide here */
+	#skip, #headerNavigation, #headerLanguage, #headerSearch, #headerFocus, #footer, aside {
+		display: none;
+	}
+
+	body {
+		font-family: Arial, sans-serif;
+		font-size: 12pt;
+		background: #FFF;
+		border: none;
+	}
+
+	p {
+		padding: 0 0 20px 0;
+	}
+
+	ul, ol {
+		padding: 0 0 20px 30px;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 700;
+	}
+
+	h1 {
+		font-size: 20pt;
+		padding: 0 0 10px 0;
+	}
+
+	h2 {
+		font-size: 16pt;
+		padding: 0 0 8px 0;
+	}
+
+	h3 {
+		font-size: 14pt;
+		padding: 0 0 6px 0;
+	}
+
+	h4 {
+		font-size: 12pt;
+		padding: 0 0 6px 0;
+	}
+
+	blockquote {
+		padding-left: 2.5cm;
+		font-style: italic;
+	}
+
+	table {
+		font-family: Arial, sans-serif;
+		margin: 0 10px 20px;
+		border-top: 1px solid #D9D9D9;
+		border-left: 1px solid #D9D9D9;
+	}
+
+	table td, th {
+		padding: 5px 10px;
+		border-right: 1px solid #D9D9D9;
+		border-bottom: 1px solid #D9D9D9;
+	}
+
+	table th {
+		font-weight: 700;
+		background: #D9D9D9;
+		color: #000;
+	}
+}
