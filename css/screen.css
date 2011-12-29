@@ -90,13 +90,9 @@ h4 {
 /* Links */
 
 a {
-	border-bottom: 1px solid #666;
-	text-decoration: none;
-}
-
-a:link {
 	color: #0033CC;
-	border-color: #899ACC;
+	border-bottom: 1px solid #89ACCC;
+	text-decoration: none;
 }
 
 a:visited {
@@ -104,16 +100,8 @@ a:visited {
 	border-color: #9A89CC;
 }
 
-a:hover {
-	color: #0033CC;
-	border-color: #0033CC;
-}
-
-a:active {
-	color: #0033CC;
-	border-color: #0033CC;
-}
-
+a:hover,
+a:active,
 a:focus {
 	color: #0033CC;
 	border-color: #0033CC;
@@ -171,6 +159,7 @@ a:focus {
 }
 
 .content table {
+	width: 100%;
 	border-top: 1px solid #000;
 	border-left: 1px solid #000;
 }
@@ -202,24 +191,31 @@ a:focus {
 
 	/* Logo */
 
-	#logo h1,
-	#logo p {
-		width: 0px;
-		height: 0px;
-		background: url(../images/logo.png) no-repeat;
-		text-indent: -9999px;
+	#logo {
 		float: left;
-		padding: 0;
 	}
 
-		#logo h1 a,
-		#logo p a {
-			width: 100%;
-			height: 100%;
-			display: block;
-			overflow: hidden;
-			border: none;
+		#logo h1,
+		#logo p {
+			width: 0px;
+			height: 0px;
+			background: url(../images/logo.png) no-repeat;
+			text-indent: -9999px;
+			padding: 0;
 		}
+
+			#logo h1 a,
+			#logo p a {
+				width: 100%;
+				height: 100%;
+				display: block;
+				overflow: hidden;
+				border: none;
+			}
+
+	#printLogo {
+		display: none;
+	}
 
 	/* Navigation */
 
@@ -319,12 +315,8 @@ a:focus {
 					color: #666;
 				}
 
-				.pagination li a:active {
-					position: relative;
-					top: 1px;
-				}
-
-				.pagination li a {
+				.pagination li a,
+				.pagination li a:visited {
 					float: left;
 					padding: 5px 8px;
 					min-width: 12px;
@@ -336,6 +328,12 @@ a:focus {
 					-moz-background-clip: padding;
 					-webkit-background-clip: padding-box;
 					background-clip: padding-box;
+				}
+
+				.pagination li a:hover,
+				.pagination li a:active,
+				.pagination li a:focus {
+					border: 1px solid #a3a3a3;
 				}
 
 /*
@@ -400,6 +398,10 @@ img.alignRight {
 	/* place the divs and elements you want to hide here */
 	#skip, #headerNavigation, #headerLanguage, #headerSearch, #headerFocus, #footer, aside {
 		display: none;
+	}
+
+	#printLogo {
+		display: block;
 	}
 
 	body {
