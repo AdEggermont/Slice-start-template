@@ -1,10 +1,8 @@
 /*
 
-	Stylesheet for PROJECT
+	Stylesheet for CD&V Ronse
 
-	Media:      screen, projection
-	Copyright:  Netlash <http://www.netlash.com>
-	author:     author <author@netlash.com>
+	author:     Ad Eggermont <adeggermont@gmail.com>
 
 */
 
@@ -12,7 +10,7 @@
 	Reset
 */
 
-article, aside, dialog, figure, footer, header, hgroup, nav, section { display: block; }
+article, aside, dialog, figure, footer, header, hgroup, nav, section, main { display: block; }
 body, form, ol, ul, dl, li, dt, dd, td, th ,tr, h1, h2, h3, h4, h5, h6, p, pre, blockquote, address, figure { margin: 0; padding: 0; }
 ol, ul { list-style: none; }
 img { border:0; }
@@ -26,7 +24,8 @@ a:focus { overflow: hidden; }
 	Clearfix
 */
 
-.clearfix:after {
+.clearfix:after,
+.container:after {
 	content: ".";
 	display: block;
 	height: 0;
@@ -34,8 +33,8 @@ a:focus { overflow: hidden; }
 	visibility: hidden;
 }
 
-.ie6 .clearfix,
-.ie7 .clearfix {
+.clearfix,
+.container {
 	zoom: 1;
 }
 
@@ -43,12 +42,34 @@ a:focus { overflow: hidden; }
 	General
 */
 
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	*behavior: url(/js/boxsizing.htc); /* Absolute path to htc file */
+}
+
 body {
 	font-family:"Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	line-height: 1.5;
 	color: #000;
 	background: #FFF;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+}
+
+::-moz-selection {
+	background-color: #333333;
+	color: #d9d9d9;
+	text-shadow: none;
+}
+
+::selection {
+	background-color: #333333;
+	color: #d9d9d9;
+	text-shadow: none;
 }
 
 /*
@@ -61,7 +82,7 @@ p {
 	padding: 0 0 12px 0;
 }
 
-strong, th, thead td, h1, h2, h3, h4, h5, h6 {
+th, thead td {
 	font-weight: 700;
 }
 
@@ -89,19 +110,11 @@ h4 {
 
 /* Links */
 
-a {
-	text-decoration: none;
-	border-bottom: 1px solid #89ACCC;
-}
-
-a:link {
-	color: #0033CC;
-	border-color: 1px solid #89ACCC;
-}
-
+a,
 a:visited {
-	color: #3300CC;
-	border-color: #9A89CC;
+	text-decoration: none;
+	color: #0033CC;
+	border-bottom: 1px solid #89ACCC;
 }
 
 a:hover,
@@ -113,32 +126,32 @@ a:focus {
 
 /* .content defaults */
 
-.content ul {
+ul {
 	list-style: disc;
 	padding: 0 0 12px 12px;
 }
 
-.content ol {
+ol {
 	list-style-type: decimal;
 	padding: 0 0 12px 12px;
 }
 
-.content dl {
+dl {
 	padding: 0 0 12px 12px;
 }
 
-.content ul ul,
-.content ul ol,
-.content ol ul,
-.content ol ol {
+ul ul,
+ul ol,
+ol ul,
+ol ol {
 	padding-bottom: 0;
 }
 
-.content code {
+code {
 	font-family: Monaco, "Courier New", monospace;
 }
 
-.content pre {
+pre {
 	font-size: 12px;
 	line-height: 18px;
 	background: #F5F5F5;
@@ -146,39 +159,35 @@ a:focus {
 	padding: 10px;
 }
 
-.content blockquote,
-.content q {
+blockquote,
+q {
 	font-style: italic;
 	color: #666;
 }
 
-.content blockquote {
+blockquote {
 	padding: 0 10px;
 	padding: 12px 0;
 }
 
-.content cite,
-.content em {
+cite,
+em {
 	font-style: italic;
 }
 
-.content table {
+table {
 	width: 100%;
-	border-top: 1px solid #000;
-	border-left: 1px solid #000;
 }
 
-.content td,
-.content th {
-	border-right: 1px solid #000;
-	border-bottom: 1px solid #000;
-	font-size: 11px;
-	padding: 4px;
-}
+	td,
+	th {
+		border-bottom: 1px solid #999;
+		padding: 4px;
+	}
 
-.content th {
-	font-weight: 700;
-}
+	th {
+		font-weight: 700;
+	}
 
 /*
 	Page structure and layout
@@ -295,9 +304,9 @@ a:focus {
 				border: 1px solid #d8d8d8;
 				background: #ebebeb;
 				color: #666;
-				-moz-border-radius: 5px;
+				   -moz-border-radius: 5px;
 				-webkit-border-radius: 5px;
-				border-radius: 5px;
+				        border-radius: 5px;
 			}
 
 				.pagination li.currentPage span {
@@ -307,9 +316,9 @@ a:focus {
 					border: 1px solid #d8d8d8;
 					background: #ebebeb;
 					font-weight: 700;
-					-moz-border-radius: 3px;
+					   -moz-border-radius: 3px;
 					-webkit-border-radius: 3px;
-					border-radius: 3px;
+					        border-radius: 3px;
 				}
 
 				.pagination li.ellipsis span {
@@ -326,12 +335,12 @@ a:focus {
 					min-width: 12px;
 					border: 1px solid #d8d8d8;
 					background: #fff;
-					-moz-border-radius: 5px;
+					   -moz-border-radius: 5px;
 					-webkit-border-radius: 5px;
-					border-radius: 5px;
-					-moz-background-clip: padding;
+					        border-radius: 5px;
+					   -moz-background-clip: padding;
 					-webkit-background-clip: padding-box;
-					background-clip: padding-box;
+					        background-clip: padding-box;
 				}
 
 				.pagination li a:hover,
@@ -344,9 +353,220 @@ a:focus {
 	Form styles
 */
 
-input, textarea, select, button {
+input.input-text,
+textarea {
+	color: #285d95;
+	border-color: #285d95;
+	border-style: solid;
+	border-width: 1px;
+	padding: 0 5px;
+	height: 27px;
+	line-height: 1;
+	margin: 0;
+	background-color: #FFF;
 	font-family: Arial, sans-serif;
+	font-size: 13px;
+	font-style: italic;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
 }
+
+.ie7 input.input-text,
+.ie8 input.input-text {
+	line-height: 27px;
+}
+
+textarea {
+	line-height: 1.5;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	height: 150px;
+}
+
+input.input-text:focus,
+textarea:focus {
+	border-color: #153250;
+	outline: none;
+	font-style: normal;
+}
+
+input.input-submit,
+.button a,
+.button a:visited {
+	cursor: pointer;
+	overflow: visible;
+	white-space: nowrap;
+	text-align: center;
+	margin: 0;
+	font-family: Arial, sans-serif;
+	color: #FFF;
+	display: block;
+	outline: 0;
+	padding: 0 11px;
+	height: 27px;
+	line-height: 1;
+	color: #FFF;
+	font-size: 14px;
+	text-transform: uppercase;
+	background: #3a96d6;
+	border: 1px solid #205791;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.ie7 input.input-submit,
+.ie8 input.input-submit {
+	line-height: 27px;
+}
+
+.button a,
+.button a:visited {
+	line-height: 25px;
+	float: left;
+}
+
+input.input-submit:hover,
+.button a:hover,
+.button a:active,
+.button a:focus {
+	background: #205791;
+}
+
+select {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	color: #404040;
+}
+
+.input-list input {
+	margin: 0 3px 0 0;
+}
+
+/* Messages */
+
+.msg {
+	padding: 12px 12px 0 12px;
+	margin-bottom: 12px;
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #CCC;
+	position: relative;
+}
+
+	.msg ul {
+		list-style: disc;
+		padding-left: 20px;
+		padding-bottom: 6px;
+	}
+
+	.msg ul li {
+		background: none;
+		padding-left: 0;
+		padding-bottom: 6px;
+	}
+
+	/* Error messages */
+
+	.error {
+		color: #FFF;
+		background-color: #BA1E1E;
+		border-color: #861616;
+	}
+
+	.error h1,
+	.error h2,
+	.error h3,
+	.error h4 {
+		color: #fff;
+	}
+
+		.error a {
+			color: #fff;
+			border-color: #df5c54;
+		}
+
+		.error a:link,
+		.error a:visited {
+			color: #fff;
+			border-color: #df5c54;
+		}
+
+		.error a:hover,
+		.error a:active,
+		.error a:focus {
+			color: #fff;
+			border-color: #fff;
+		}
+
+	/* Success messages */
+
+	.success {
+		color: #FFF;
+		background-color: #72aa2e;
+		border-color: #5b8725;
+	}
+
+	.success h1,
+	.success h2,
+	.success h3,
+	.success h4 {
+		color: #fff;
+	}
+
+		.success a {
+			color: #fff;
+			border-color: #a0c673;
+		}
+
+		.success a:link,
+		.success a:visited {
+			color: #fff;
+			border-color: #a0c673;
+		}
+
+		.success a:hover,
+		.success a:active,
+		.success a:focus {
+			color: #fff;
+			border-color: #fff;
+		}
+
+	/* Notice messages */
+
+	.notice {
+		color: #404040;
+		background-color: #ffe38a;
+		border-color: #a7955a;
+	}
+
+	.notice h1,
+	.notice h2,
+	.notice h3,
+	.notice h4 {
+		color: #404040;
+	}
+
+		.notice a {
+			color: #404040;
+			border-color: #ab985d;
+		}
+
+		.notice a:link,
+		.notice a:visited {
+			color: #404040;
+			border-color: #404040;
+		}
+
+		.notice a:hover,
+		.notice a:active,
+		.notice a:focus {
+			color: #000;
+			border-color: #000;
+		}
 
 /*
 	General classes
