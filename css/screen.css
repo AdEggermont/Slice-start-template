@@ -72,6 +72,30 @@ body {
 	text-shadow: none;
 }
 
+.old-browser-warning {
+	color: #FFF;
+	background-color: #BA1E1E;
+	padding: 30px 0 15px;
+	text-align: center;
+}
+
+	.old-browser-warning p {
+		padding: 0 0 15px 0;
+	}
+
+		.old-browser-warning a,
+		.old-browser-warning a:visited {
+			color: #fff;
+			border-color: pink;
+		}
+
+		.old-browser-warning a:hover,
+		.old-browser-warning a:active,
+		.old-browser-warning a:focus {
+			color: #fff;
+			border-color: #fff;
+		}
+
 /*
 	Typography and text styles
 */
