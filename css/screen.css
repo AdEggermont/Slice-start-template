@@ -213,6 +213,37 @@ table {
 		font-weight: 700;
 	}
 
+img {
+	max-width: 100%;
+}
+
+/*
+	Col system
+*/
+
+.col-12,
+.col-8,
+.col-9,
+.col-6,
+.col-5,
+.col-4,
+.col-3,
+.col-2 {
+	float: left;
+	padding-left: 20px;
+	padding-right: 20px;
+	min-height: 1px;
+}
+
+.col-12 { width: 100%; }
+.col-9 { width: 75%; }
+.col-8 { width: 66.6%; }
+.col-6 { width: 50%; }
+.col-5 { width: 41.6%; }
+.col-4 { width: 33.3%; }
+.col-3 { width: 25%; }
+.col-2 { width: 16.6%; }
+
 /*
 	Page structure and layout
 */
@@ -597,36 +628,34 @@ select {
 */
 
 .hidden { display: none; }
-.block { display: block; }
-.noPadding { padding: 0 !important; }
-.noMargin { margin: 0 !important; }
-.floatLeft { float: left; }
-.floatRight { float: right; }
-.noBorder { border: none; }
-#skip, .accessibility { position: absolute; top: -9999px; left: -9999px; } /* For screenreaders */
 
 /*
-	Image classes
+	Responsiveness
 */
 
-img.alignLeft {
-	float: left;
-	padding: 0 10px 10px 0;
-}
+@media(max-width : 960px) {
 
-img.alignRight {
-	float: right;
-	padding: 0 0 10px 10px;
-}
-
-.linkedImage {
-	display: block;
-	border: none !important;
-}
-
-	.linkedImage img {
-		display: block;
+	.container {
+		width: 100%;
 	}
+
+}
+
+@media(max-width : 500px) {
+
+	.col-12,
+	.col-8,
+	.col-9,
+	.col-6,
+	.col-5,
+	.col-4,
+	.col-3,
+	.col-2 {
+		width: 100%;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
 
 /*
 	Print styles
