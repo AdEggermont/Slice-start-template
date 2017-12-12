@@ -1,9 +1,17 @@
 $(document).ready(function() {
 
-	/* Toggle menu */
+	/*
+		Mobile navigation
+	*/
+
 	$('#jsMenuTrigger').on('click', function(e) {
 		e.preventDefault();
-		$('.navigation').toggleClass('open');
+		$('body').addClass('menu-open');
+	});
+
+	$('#js-menu-close').on('click', function(e) {
+		e.preventDefault();
+		$('body').removeClass('menu-open');
 	});
 
 });

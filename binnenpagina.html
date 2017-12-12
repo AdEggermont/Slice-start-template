@@ -23,6 +23,7 @@
 
 	<!--[if lt IE 9]> <script src="js/html5.js"></script> <![endif]-->
 </head>
+
 <body>
 	<!--[if lt IE 9]>
 	<div class="old-browser-warning">
@@ -32,57 +33,76 @@
 	</div>
 	<![endif]-->
 
-	<div class="header-wrapper">
-		<header class="container header">
-			<div class="col col-12">
-				<p class="logo">
-					<a href="/">
-						<img src="images/logo.png" alt="[Site title]" />
+	<div class="mobile-menu-wrapper">
+		<a href="#" id="js-menu-close" class="mobile-close">Sluiten</a>
+
+		<div class="header-wrapper">
+			<header class="container header">
+				<div class="col col-12">
+					<p class="logo">
+						<a href="/">
+							<img src="images/logo.png" alt="[Project title]" />
+						</a>
+					</p>
+				</header>
+			</div>
+		</div>
+
+		<div class="navigation-wrapper">
+			<nav class="navigation container">
+				<div class="col col-12">
+					<a href="#" class="menu-trigger" id="jsMenuTrigger">
+						<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Menu
 					</a>
-				</p>
-			</div>
-		</header>
-	</div>
+					<ul class="clearfix">
+						<li><a href="#">Home</a></li>
+						<li class="selected"><a href="#">Item 1</a></li>
+						<li><a href="#">Item 2</a></li>
+						<li><a href="#">Item 3</a></li>
+						<li><a href="#">Item 4</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
 
-	<div class="navigation-wrapper">
-		<nav class="navigation container">
-			<div class="col col-12">
-				<a href="#" class="menu-trigger" id="jsMenuTrigger"><span>Menu</span></a>
-				<ul class="clearfix">
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-					<li><a href="#"></a></li>
-				</ul>
-			</div>
-		</nav>
-	</div>
+		<div class="main-wrapper">
+			<div class="main container">
+				<main class="content col col-8">
+					<h1>[Page title]</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, modi. Voluptatem assumenda saepe nisi aspernatur cupiditate a, pariatur consequatur sint tempore dolores minima odit. Soluta molestiae eos, ipsum animi suscipit.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, modi. Voluptatem assumenda saepe nisi aspernatur cupiditate a, pariatur consequatur sint tempore dolores minima odit. Soluta molestiae eos, ipsum animi suscipit.</p>
+				</main>
 
-	<div class="main-wrapper">
-		<div class="main container">
-			<main class="content col col-8">
-				<h1>[Page title]</h1>
-			</main>
-
-			<div class="sidebar col col-4">
-				<aside>
-					<h3>[Widget title]</h3>
-				</aside>
+				<div class="sidebar col col-4">
+					<aside class="widget">
+						<h3>[Widget title]</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, modi. Voluptatem assumenda saepe nisi aspernatur cupiditate a, pariatur consequatur sint tempore dolores minima odit. Soluta molestiae eos, ipsum animi suscipit.</p>
+					</aside>
+				</div>
 			</div>
+		</div>
+
+		<div class="footer-wrapper">
+			<footer class="footer container">
+				<div class="col col-12">
+					<p>&copy; [Project title]</p>
+					<ul>
+						<li><a href="#">Sitemap</a></li>
+						<li><a href="#">Disclaimer</a></li>
+					</ul>
+				</div>
+			</footer>
 		</div>
 	</div>
 
-	<div class="footer-wrapper">
-		<footer class="footer container">
-			<div class="inner col col-12">
-				<p>&copy; [Project title]</p>
-				<ul>
-					<li><a href="#">Sitemap</a></li>
-					<li><a href="#">Disclaimer</a></li>
-				</ul>
-			</div>
-		</footer>
+	<div class="mobile-navigation">
+		<ul class="clearfix">
+			<li><a href="#">Home</a></li>
+			<li class="selected"><a href="#">Item 1</a></li>
+			<li><a href="#">Item 2</a></li>
+			<li><a href="#">Item 3</a></li>
+			<li><a href="#">Item 4</a></li>
+		</ul>
 	</div>
 
 	<script src="js/jquery-1.11.min.js"></script>

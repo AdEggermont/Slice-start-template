@@ -137,15 +137,16 @@ h4 {
 a,
 a:visited {
 	text-decoration: none;
-	color: #0033CC;
-	border-bottom: 1px solid #89ACCC;
+	color: #1a92cc;
+	border-bottom: 1px solid #b4dbee;
+	transition: all .3s ease;
 }
 
 a:hover,
 a:active,
 a:focus {
-	color: #0033CC;
-	border-color: #0033CC;
+	color: #1a92cc;
+	border-color: #1a92cc;
 }
 
 /* .content defaults */
@@ -257,46 +258,130 @@ img {
 	Header
 */
 
+.header {
+	text-align: center;
+}
+
 	/* Logo */
 
-	#logo {
-		float: left;
+	.logo {
+		display: inline-block;
+		padding: 15px 0;
 	}
 
-		#logo h1,
-		#logo p {
-			width: 0px;
-			height: 0px;
-			background: url(../images/logo.png) no-repeat;
-			text-indent: -9999px;
-			padding: 0;
+		.logo a,
+		.logo a:visited {
+			border: 0;
 		}
 
-			#logo h1 a,
-			#logo p a {
-				width: 100%;
-				height: 100%;
-				display: block;
-				overflow: hidden;
-				border: none;
-			}
+/*
+	Navigation
+*/
 
-	#printLogo {
-		display: none;
+.menu-trigger {
+	display: none !important;
+}
+
+.navigation-wrapper {
+	background: #CCC;
+}
+
+	.navigation ul {
+		list-style: none;
+		padding: 0;
 	}
 
-	/* Navigation */
+		.navigation li {
+			float: left;
+			padding: 0 25px 0 0;
+			position: relative;
+		}
+
+		.navigation li:last-child {
+			padding-right: 0;
+		}
+
+			.navigation a,
+			.navigation a:visited {
+				display: block;
+				border: 0;
+				float: left;
+				line-height: 50px;
+				height: 50px;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				color: #666;
+			}
+
+			.navigation a:hover,
+			.navigation a:active,
+			.navigation a:focus,
+			.navigation .selected a,
+			.navigation .selected a:visited {
+				color: #000;
+			}
+
+			.navigation .selected a,
+			.navigation .selected a:visited {
+				font-weight: 700;
+			}
+
+.mobile-navigation,
+.mobile-close,
+.mobile-close:visited {
+	display: none;
+}
 
 
 /*
 	Content
 */
 
+.main-wrapper {
+	padding: 40px 0;
+}
+
 
 /*
 	Footer
 */
 
+.footer-wrapper {
+	background: #CCC;
+	overflow: hidden;
+}
+
+	.footer a,
+	.footer a:visited {
+		color: #000;
+		border-color: #666;
+	}
+
+	.footer a:hover,
+	.footer a:active,
+	.footer a:focus {
+		border-color: #000;
+	}
+
+	.footer p {
+		float: left;
+		padding: 10px 0 0 0;
+	}
+
+	.footer ul {
+		float: right;
+		padding-right: 0;
+		list-style: none;
+	}
+
+		.footer li {
+			float: left;
+			padding: 10px 0 0 15px;
+		}
+
+		.footer li:first-child {
+			padding-left: 0;
+		}
 
 /*
 	Pagination
@@ -407,6 +492,13 @@ img {
 /*
 	Form styles
 */
+
+label,
+.label {
+	display: block;
+	cursor: pointer;
+	padding: 0 0 7px 0;
+}
 
 input.input-text,
 textarea {
@@ -641,6 +733,117 @@ select {
 
 }
 
+@media(max-width : 768px) {
+	.navigation ul {
+		display: none;
+	}
+
+	.navigation .menu-trigger {
+		display: block !important;
+		width: 100%;
+		text-align: center;
+	}
+
+		.navigation .menu-trigger .glyphicon {
+			top: 2px;
+		}
+
+	/*
+		Mobile navigation
+	*/
+
+	.mobile-navigation {
+		width: 80%;
+		height: 100%;
+		background: #CCC;
+		box-shadow: inset -3px 0 5px rgba(0,0,0,.4);
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		overflow-y: auto;
+		padding: 15px;
+		display: none;
+	}
+
+		.mobile-navigation ul {
+			padding: 0 0 10px 0;
+			list-style: none;
+		}
+
+			.mobile-navigation li {
+				background: 0;
+				padding: 0 0 5px 0;
+			}
+
+			.mobile-navigation a,
+			.mobile-navigation a:visited {
+				color: #666;
+				border: 0;
+				display: block;
+				padding: 5px;
+				line-height: 1.3;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				position: relative;
+			}
+
+			.mobile-navigation a:hover,
+			.mobile-navigation a:active,
+			.mobile-navigation a:focus,
+			.mobile-navigation .selected a,
+			.mobile-navigation .selected a:visited {
+				color: #000;
+			}
+
+	body.menu-open {
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.menu-open .mobile-navigation {
+		display: block;
+	}
+
+	.menu-open .mobile-menu-wrapper {
+		position: absolute;
+		left: 80%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+		.menu-open .mobile-menu-wrapper:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: #000;
+			background: rgba(0,0,0,.85);
+			z-index: 99;
+		}
+
+	.mobile-close,
+	.mobile-close:visited {
+		display: none;
+		position: absolute;
+		top: 10px;
+		left: 8px;
+		z-index: 999;
+		width: 30px;
+		height: 30px;
+		border: 0;
+		text-indent: -9999em;
+		background: url('../images/icon-close.png') no-repeat center center;
+	}
+
+	.menu-open .mobile-close,
+	.menu-open .mobile-close:visited {
+		display: block;
+	}
+}
+
 @media(max-width : 500px) {
 
 	.col-12,
@@ -675,10 +878,6 @@ select {
 	/* place the divs and elements you want to hide here */
 	#skip, #headerNavigation, #headerLanguage, #headerSearch, #headerFocus, #footer, aside {
 		display: none;
-	}
-
-	#printLogo {
-		display: block;
 	}
 
 	body {
