@@ -33,20 +33,12 @@ a:focus { overflow: hidden; }
 	visibility: hidden;
 }
 
-.clearfix,
-.container {
-	zoom: 1;
-}
-
 /*
 	General
 */
 
 *, *:before, *:after {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	*behavior: url(/js/boxsizing.htc); /* Absolute path to htc file */
 }
 
 body {
@@ -241,7 +233,7 @@ img {
 .col-4 { width: 33.3%; }
 .col-3 { width: 25%; }
 .col-2 { width: 16.6%; }
-.col-1 { width: 8.3%;}
+.col-1 { width: 8.3%; }
 
 /*
 	Page structure and layout
